@@ -21,6 +21,7 @@ const datePropIdMap: { [datePropId: string]: string } = {
   P1191: "first performed",
   P1619: "officially opened",
   P571: "created",
+  P585: "happened",
   P1249: "earliest record",
   P576: "ended",
   P8556: "became extinct",
