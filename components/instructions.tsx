@@ -32,7 +32,7 @@ export default function Instructions(props: Props) {
             >
               Wikidata
             </a>
-            ,
+            ,{" "}
             <a
               href="https://www.wikipedia.org"
               target="_blank"
