@@ -31,6 +31,8 @@ const datePropIdMap: { [datePropId: string]: string } = {
   P570: "died",
   P582: "ended",
   P580: "started",
+  P589: "formed",
+  P588: "released",
   P7125: "latest one",
   P7124: "first one",
   F250: "graduated",
