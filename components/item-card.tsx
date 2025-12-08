@@ -15,6 +15,7 @@ type Props = {
 };
 
 const datePropIdMap: { [datePropId: string]: string } = {
+  P39: "elected",
   P569: "born",
   P570: "died",
   P571: "created",
