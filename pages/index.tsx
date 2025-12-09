@@ -11,7 +11,7 @@ export default function Index() {
         <title>Flikitrivia</title>
         <link
           rel="shortcut icon"
-          href="public/favicon.ico"
+          href="favicon.ico"
         />
       </Head>
 

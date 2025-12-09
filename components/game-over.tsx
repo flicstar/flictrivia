@@ -10,7 +10,7 @@ interface Props {
   score: number;
 }
 
-const defaultShareText = "Share results";
+const defaultShareText = "Share stats";
 
 function getMedal(score: number): string {
   if (score >= 20) {
