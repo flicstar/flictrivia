@@ -15,6 +15,7 @@ export default function Instructions(props: Props) {
   return (
     <div className={styles.instructions}>
       <div className={styles.wrapper}>
+        <h1 className={styles.title}>Famozily</h1>
         <h2>Place the cards on the timeline in the correct order.</h2>
         {highscore !== 0 && (
           <div className={styles.highscoreWrapper}>
