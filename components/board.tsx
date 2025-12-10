@@ -127,6 +127,7 @@ export default function Board(props: Props) {
     >
       <div className={styles.wrapper}>
         <div className={styles.top}>
+        <div className={styles.title}>Famozily</div>
           <Hearts lives={state.lives} />
           {state.lives > 0 ? (
             <>
