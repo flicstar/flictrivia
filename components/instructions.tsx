@@ -23,28 +23,7 @@ export default function Instructions(props: Props) {
         )}
         <Button onClick={start} text="Start game" />
         <div className={styles.about}>
-          <div>
-            All data sourced from{" "}
-            <a
-              href="https://www.wikidata.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Wikidata
-            </a>
-            ,{" "}
-            <a
-              href="https://www.wikipedia.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Wikipedia
-            </a>
-            
-            , and
-              family history.     
-          </div>
-         <div>
+                   <div>
   Made with ♥ by{" "}
   <a
     href="https://flicstar.com"
@@ -52,22 +31,30 @@ export default function Instructions(props: Props) {
     rel="noopener noreferrer"
   >
     flicstar
-  </a>{" "}
-  based on Tom Watson&#39;s{" "}
+  </a></div>
+          <div>
+            Data sourced from family history and{" "}
+            <a
+              href="https://www.wikipedia.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Wikipedia
+            </a>   
+          </div>
+{" "}
+  <div>Based on Tom Watson&#39;s game{" "}
   <a
     href="https://github.com/tom-james-watson/wikitrivia/"
     target="_blank"
     rel="noopener noreferrer"
   >
-    Wikitrivia game
+    Wikitrivia
   </a>
-  .
 </div>
           <GitHubButton
             href="https://github.com/tom-james-watson/wikitrivia"
             data-size="large"
-            data-show-count="true"
-            aria-label="Star tom-james-watson/wikitrivia on GitHub"
           ></GitHubButton>
         </div>
       </div>
