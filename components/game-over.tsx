@@ -5,7 +5,6 @@ import Button from "./button";
 import Score from "./score";
 
 interface Props {
-  highscore: number;
   resetGame: () => void;
   score: number;
 }
@@ -24,7 +23,7 @@ function getMedal(score: number): string {
 }
 
 export default function GameOver(props: Props) {
-  const { highscore, resetGame, score } = props;
+  const { resetGame, score } = props;
 
   const animProps = useSpring({
     opacity: 1,
@@ -35,11 +34,10 @@ export default function GameOver(props: Props) {
   const [shareText, setShareText] = React.useState(defaultShareText);
 
   const share = React.useCallback(async () => {
-    await navigator?.clipboard?.writeText(
-      `famozily.pages.dev\n\n${getMedal(
-        score
-      )}Streak: ${score}\n${getMedal(highscore)}`
-    );
+    await navigator.clipboard.writeText(
+  `famozily.pages.dev\n\nScore: ${score} ${getMedal(score)}`
+);
+
     setShareText("Copied");
     setTimeout(() => {
       setShareText(defaultShareText);
@@ -50,10 +48,6 @@ export default function GameOver(props: Props) {
     <animated.div style={animProps} className={styles.gameOver}>
       <div className={styles.scoresWrapper}>
         <div className={styles.score}>
-          <Score score={score} title="Streak" />
-          <div className={styles.score}>
-          <Score score={highscore} title="Best streak" />
-        </div>
         </div>
       </div>
       <div className={styles.buttons}>

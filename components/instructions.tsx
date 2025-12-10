@@ -5,7 +5,6 @@ import Button from "./button";
 import Score from "./score";
 
 interface Props {
-  highscore: number;
   start: () => void;
 }
 
@@ -17,11 +16,6 @@ export default function Instructions(props: Props) {
       <div className={styles.wrapper}>
         <h1 className={styles.title}>Famozily</h1>
         <h2>Place the cards on the timeline in the correct order.</h2>
-         {highscore !== 0 && (
-          <div className={styles.highscoreWrapper}>
-            <Score score={highscore} title="Best streak" />
-          </div>
-        )}
         <Button onClick={start} text="Start game" />
         <div className={styles.about}>
                    <div>
