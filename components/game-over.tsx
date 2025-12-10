@@ -41,7 +41,7 @@ export default function GameOver(props: Props) {
     setTimeout(() => {
       setShareText(defaultShareText);
     }, 2000);
-  }, [highscore, score]);
+  }, [ score]);
 
   return (
     <animated.div style={animProps} className={styles.gameOver}>

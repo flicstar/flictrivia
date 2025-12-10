@@ -8,7 +8,7 @@ interface Props {
 }
 
 export default function Instructions(props: Props) {
-  const { highscore, start } = props;
+  const { start } = props;
 
   return (
     <div className={styles.instructions}>
