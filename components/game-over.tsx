@@ -8,7 +8,7 @@ interface Props {
   score: number;
 }
 
-const defaultShareText = "Share stats";
+const defaultShareText = "Share";
 
 function getMedal(score: number): string {
   if (score >= 20) {
@@ -51,7 +51,10 @@ export default function GameOver(props: Props) {
       </div>
       <div className={styles.buttons}>
         <Button onClick={resetGame} text="Play again" />
-        <Button onClick={share} text={shareText} minimal />
+        <Button onClick={share} minimal>
+  <span>{shareText}</span>
+  <img src="share.svg" alt="share" className={styles.shareIcon} />
+</Button>
       </div>
     </animated.div>
   );

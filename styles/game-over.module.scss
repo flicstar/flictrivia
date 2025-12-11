@@ -21,13 +21,20 @@
     }
   }
 
-  .buttons {
-    display: flex;
+.buttons {
+  display: flex;
 
-    > button {
-      &:not(:last-child) {
-        margin-right: 10px;
-      }
+  > button {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    .shareIcon {
+      width: 16px;
+      height: 16px;
+      margin-left: 4px; // space between text and icon
+      vertical-align: middle;
     }
   }
+}
 }
