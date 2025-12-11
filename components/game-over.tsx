@@ -53,7 +53,7 @@ export default function GameOver(props: Props) {
         <Button onClick={resetGame} text="Play again" />
         <Button onClick={share} minimal>
   <span>{shareText}</span>
-  <img src=".images/share.svg" alt="share" className={styles.shareIcon} />
+  <img src="/images/share.svg" alt="share" className={styles.shareIcon} />
 </Button>
       </div>
     </animated.div>
