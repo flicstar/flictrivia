@@ -3,7 +3,13 @@ import GitHubButton from "react-github-btn";
 import styles from "../styles/instructions.module.scss";
 import Button from "./button";
 
+interface Props {
+  start: () => void;
+}
 
+export default function Instructions(props: Props) {
+  const { start } = props;
+  
   return (
     <div className={styles.instructions}>
       <div className={styles.wrapper}>
