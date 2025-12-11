@@ -6,17 +6,18 @@ interface Props {
   minimal?: boolean;
   onClick: () => void;
   text: string;
+  children?: React.ReactNode;
 }
 
 export default function Button(props: Props) {
-  const { minimal = false, onClick, text } = props;
+  const { minimal = false, onClick, text, children } = props;
 
   return (
     <button
       onClick={onClick}
       className={classNames(styles.button, { [styles.minimal]: minimal })}
     >
-      {text}
+      {children || text}
     </button>
   );
 }
