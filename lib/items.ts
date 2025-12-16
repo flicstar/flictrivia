@@ -41,11 +41,15 @@ export function getRandomItem(deck: Item[], played: Item[]): Item {
   }
 
   // Fallback: try again without the period restriction, but still prevent duplicates/closeness
-  const relaxed = source.filter(candidate => {
-    if (played.some(p => p.year === candidate.year)) return false;
-    if (tooClose(candidate, played)) return false;
-    return true;
-  });
+  const candidates = source.filter(candidate => {
+  // Rule #1: one card per year
+  if (played.some(p => p.year === candidate.year)) return false;
+
+  if (candidate.year < fromYear || candidate.year > toYear) return false;
+  if (tooClose(candidate, played)) return false;
+
+  return true;
+});
 
   if (relaxed.length > 0) {
     return relaxed[Math.floor(Math.random() * relaxed.length)];
@@ -66,7 +70,7 @@ function tooClose(item: Item, played: Item[]) {
 
   // Start wider to make early placement easier, then tighten.
   // You can tune these numbers based on playtesting.
-  let distance =
+  const distance =
     played.length < 4 ? 25 :
     played.length < 10 ? 12 :
     played.length < 25 ? 6 :
