@@ -10,16 +10,7 @@ interface Props {
 
 const defaultShareText = "Share";
 
-function getMedal(score: number): string {
-  if (score >= 20) {
-    return "🥇 ";
-  } else if (score >= 10) {
-    return "🥈 ";
-  } else if (score >= 1) {
-    return "🥉 ";
-  }
-  return "";
-}
+
 
 export default function GameOver(props: Props) {
   const { resetGame, score } = props;
@@ -34,8 +25,8 @@ export default function GameOver(props: Props) {
 
   const share = React.useCallback(async () => {
     await navigator.clipboard.writeText(
-  `famozily.pages.dev\n\nScore: ${score} ${getMedal(score)}`
-);
+      `famozily.pages.dev\n\nScore: ${score} 🏆`
+    );
 
     setShareText("Copied");
     setTimeout(() => {
@@ -43,13 +34,14 @@ export default function GameOver(props: Props) {
     }, 2000);
   }, [ score]);
 
-  return (
+   return (
     <animated.div style={animProps} className={styles.gameOver}>
       <div className={styles.scoresWrapper}>
         <div className={styles.scoreCard}>
           <div className={styles.scoreLabel}>Your score</div>
           <div className={styles.scoreValue}>
-            {score} <span className={styles.medal}>{getMedal(score)}</span>
+            {score}
+            <span className={styles.trophy}>🏆</span>
           </div>
         </div>
       </div>
