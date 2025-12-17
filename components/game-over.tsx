@@ -46,15 +46,20 @@ export default function GameOver(props: Props) {
   return (
     <animated.div style={animProps} className={styles.gameOver}>
       <div className={styles.scoresWrapper}>
-        <div className={styles.score}>
+        <div className={styles.scoreCard}>
+          <div className={styles.scoreLabel}>Your score</div>
+          <div className={styles.scoreValue}>
+            {score} <span className={styles.medal}>{getMedal(score)}</span>
+          </div>
         </div>
       </div>
+
       <div className={styles.buttons}>
         <Button onClick={resetGame} text="Play again" />
         <Button onClick={share} minimal>
-  <span>{shareText}</span>
-  <img src="/images/share.svg" alt="share" className={styles.shareIcon} />
-</Button>
+          <span>{shareText}</span>
+          <img src="/images/share.svg" alt="share" className={styles.shareIcon} />
+        </Button>
       </div>
     </animated.div>
   );

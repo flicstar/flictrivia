@@ -10,31 +10,60 @@
   .scoresWrapper {
     margin: 40px 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+  }
 
-    .score {
-      display: inline-block;
+  .scoreCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-      &:last-child {
-        margin-left: 20px;
+    padding: 18px 22px;
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
+  }
+
+  .scoreLabel {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 8px;
+  }
+
+  .scoreValue {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .medal {
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  .buttons {
+    display: flex;
+
+    > button {
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+
+      .shareIcon {
+        width: 16px;
+        height: 16px;
+        margin-left: 8px;
+        vertical-align: middle;
       }
     }
   }
-
-.buttons {
-  display: flex;
-
-  > button {
-    &:not(:last-child) {
-      margin-right: 10px;
-    }
-
-    .shareIcon {
-      width: 16px;
-      height: 16px;
-      margin-left: 8px; // space between text and icon
-      vertical-align: middle;
-    }
-  }
-}
 }
