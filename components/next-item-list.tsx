@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 import { Droppable } from "react-beautiful-dnd";
 import { Item } from "../types/item";
 import ItemCard from "./item-card";
@@ -10,22 +11,32 @@ interface NextItemListProps {
 
 export default function NextItemList(props: NextItemListProps) {
   const { next } = props;
-  
-  const [arming, setArming] = React.useState(false);
 
+  const [arming, setArming] = React.useState(false);
 
   return (
     <div className={styles.container}>
       <Droppable droppableId="next" direction="horizontal">
         {(provided) => (
-          <div className={styles.wrapper}<div className={classNames(styles.wrapper, { [styles.arming]: arming })}>
+          <div
+            className={classNames(styles.wrapper, {
+              [styles.arming]: arming,
+            })}
+          >
             <div
               ref={provided.innerRef}
               {...provided.droppableProps}
               className={styles.list}
             >
               {next && (
-                <ItemCard draggable index={0} item={next} key={next.id} />
+                <ItemCard
+                  draggable
+                  index={0}
+                  item={next}
+                  key={next.id}
+                  onArmStart={() => setArming(true)}
+                  onArmEnd={() => setArming(false)}
+                />
               )}
               {provided.placeholder}
             </div>
