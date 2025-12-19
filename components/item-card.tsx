@@ -48,6 +48,7 @@ function capitalize(str: string): string {
 }
 
 export default function ItemCard(props: Props) {
+  const cardRef = React.useRef<HTMLDivElement | null>(null);
   const { draggable, flippedId, index, item, setFlippedId } = props;
 
   const flipped = item.id === flippedId;
@@ -61,6 +62,24 @@ export default function ItemCard(props: Props) {
    const handlePointerUpOrCancel = (e: React.PointerEvent<HTMLDivElement>) => {
   e.currentTarget.releasePointerCapture?.(e.pointerId);
 };
+
+   React.useEffect(() => {
+  if (!draggable) return;
+
+  const el = cardRef.current;
+  if (!el) return;
+
+  const handleTouchMove = (e: TouchEvent) => {
+    e.preventDefault();
+  };
+
+  el.addEventListener("touchmove", handleTouchMove, { passive: false });
+
+  return () => {
+    el.removeEventListener("touchmove", handleTouchMove);
+  };
+}, [draggable]);
+
 
   const cardSpring = useSpring({
     opacity: flipped ? 1 : 0,
@@ -77,12 +96,15 @@ const type = React.useMemo(() => {
       {(provided, snapshot) => {
         return (
           <div
-            className={classNames(styles.itemCard, {
+           ref={(node) => {
+            cardRef.current = node;
+            provided.innerRef(node);
+          }}  
+          className={classNames(styles.itemCard, {
               [styles.played]: "played" in item,
               [styles.flipped]: flipped,
               [styles.dragging]: snapshot.isDragging,
             })}
-            ref={provided.innerRef}
             {...provided.draggableProps}
             {...provided.dragHandleProps}
             onPointerDown={handlePointerDown}
