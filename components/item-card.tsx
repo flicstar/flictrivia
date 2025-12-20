@@ -55,7 +55,7 @@ export default function ItemCard(props: Props) {
 
   const flipped = item.id === flippedId;
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
-  if (!draggable) return;
+  if (!draggable || ("played" in item)) return;
   if (e.pointerType === "touch" || e.pointerType === "pen") {
     e.currentTarget.setPointerCapture?.(e.pointerId);
      props.onArmStart?.();
@@ -107,6 +107,7 @@ const type = React.useMemo(() => {
     provided.innerRef(node);
   }}
   className={classNames(styles.itemCard, {
+     [styles.touchDragSurface]: draggable && !("played" in item),
     [styles.played]: "played" in item,
     [styles.flipped]: flipped,
     [styles.dragging]: snapshot.isDragging,
