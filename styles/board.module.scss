@@ -21,8 +21,8 @@
 }
 
 .top {
-  position: relative;
-  width: 100%;
+  grid-row: 1;
+  flex-wrap: wrap;
 }
 
 .hearts {

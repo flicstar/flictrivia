@@ -1,11 +1,10 @@
 .hearts {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 0;
-}
+  justify-content: center;
+  margin-top: 20px;
 
-.heart {
-  height: 30px;
-  width: 30px;
+  .heart {
+    height: 30px;
+    margin: 6px;
+  }
 }

@@ -117,37 +117,37 @@ export default function Board(props: Props) {
     return state.played.filter((item) => item.played.correct).length - 1;
   }, [state.played]);
 
-return (
-  <DragDropContext
-    onDragEnd={onDragEnd}
-    onDragStart={onDragStart}
-    sensors={[useAutoMoveSensor.bind(null, state)]}
-  >
-    <div className={styles.wrapper}>
-      <div className={styles.top}>
+ return (
+    <DragDropContext
+      onDragEnd={onDragEnd}
+      onDragStart={onDragStart}
+      sensors={[useAutoMoveSensor.bind(null, state)]}
+    >
+      <div className={styles.wrapper}>
+        <div className={styles.top}>
         <div className={styles.title}>Famozily</div>
-
-        <div className={styles.hearts}>
           <Hearts lives={state.lives} />
+          {state.lives > 0 ? (
+            <>
+              <NextItemList next={state.next} />
+            </>
+          ) : (
+            <GameOver
+              resetGame={resetGame}
+              score={score}
+            />
+          )}
+        </div>
+        <div id="bottom" className={styles.bottom}>
+          <PlayedItemList
+            badlyPlacedIndex={
+              state.badlyPlaced === null ? null : state.badlyPlaced.index
+            }
+            isDragging={isDragging}
+            items={state.played}
+          />
         </div>
       </div>
-
-      {state.lives > 0 ? (
-        <NextItemList next={state.next} />
-      ) : (
-        <GameOver resetGame={resetGame} score={score} />
-      )}
-
-      <div id="bottom" className={styles.bottom}>
-        <PlayedItemList
-          badlyPlacedIndex={
-            state.badlyPlaced === null ? null : state.badlyPlaced.index
-          }
-          isDragging={isDragging}
-          items={state.played}
-        />
-      </div>
-    </div>
-  </DragDropContext>
+    </DragDropContext>
 );
 }
