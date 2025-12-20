@@ -127,7 +127,9 @@ export default function Board(props: Props) {
         <div className={styles.top}>
         <div className={styles.title}>Famozily</div>
         <div className={styles.hearts}>
-          <Hearts lives={state.lives} />
+    <Hearts lives={lives} />
+  </div>
+</div>
           {state.lives > 0 ? (
             <>
               <NextItemList next={state.next} />
