@@ -22,6 +22,25 @@ export default function NextItemList(props: NextItemListProps) {
             className={classNames(styles.wrapper, {
               [styles.arming]: arming,
             })}
+            {arming && (
+  <svg
+    className={styles.armingTrace}
+    viewBox="0 0 100 100"
+    preserveAspectRatio="none"
+  >
+    <rect
+      className={styles.tracePath}
+      x="2"
+      y="2"
+      width="96"
+      height="96"
+      rx="5"
+      ry="5"
+      pathLength={1}
+    />
+  </svg>
+)}
+
           >
             <div
               ref={provided.innerRef}
