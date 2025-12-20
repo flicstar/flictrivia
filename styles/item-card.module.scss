@@ -154,9 +154,29 @@
 
 /* Mobile-only shrink */
 @media (max-width: 480px) {
-  .itemCard {
+  /* Only timeline cards (played) are smaller */
+  .itemCard.played {
     width: 120px;
     height: 160px;
     margin-right: 12px;
+  }
+.itemCard.dragging {
+    width: 120px;
+    height: 160px;
+    margin-right: 12px;
+  }
+
+  /* Make year/label a touch larger on played cards */
+  .itemCard.played .bottom {
+    line-height: 34px;
+    font-size: 15px;
+  }
+
+  .itemCard.played .label {
+    font-size: 14px;
+  }
+
+  .itemCard.played .description {
+    font-size: 12px; /* keep as-is or slightly smaller if needed */
   }
 }
