@@ -1,14 +1,10 @@
-@import "./variables";
-
 .hearts {
   display: flex;
-  align-items: center;
-  gap: 10px;      /* instead of margins on each heart */
-  margin-top: 0;  /* important: don't push it down into the title area */
-}
+  justify-content: right;
+  margin-top: 20px;
 
-.heart {
-  height: 30px;
-  width: 30px;    /* helps prevent weird layout calculations */
-  flex: 0 0 auto;
+  .heart {
+    height: 30px;
+    margin: 6px;
+  }
 }
