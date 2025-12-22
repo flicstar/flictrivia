@@ -5,7 +5,8 @@ import { getRandomItem, preloadImage } from "./items";
 const STARTER_CATEGORY = "family";
 
 function getStarterItem(deck: Item[]): Item {
-  return pickRandom(deck.filter(item => item.category === STARTER_CATEGORY));
+  const pool = deck.filter((item) => item.category === STARTER_CATEGORY);
+  return pool[Math.floor(Math.random() * pool.length)];
 }
 
 export default async function createState(deck: Item[]): Promise<GameState> {
