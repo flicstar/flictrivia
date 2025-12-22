@@ -52,17 +52,7 @@ export default function GameOver(props: Props) {
           <span>{shareText}</span>
           <img src="/images/share.svg" alt="share" className={styles.shareIcon} />
         </Button>
-        <div className={styles.about}>
-      <div>
-        Not in the family? Play{" "}
-        <a
-          href="https://ozonly.pages.dev"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          OzOnly
-        </a>
       </div>
-    </div>
-  </animated.div>
-);
+    </animated.div>
+  );
+}
