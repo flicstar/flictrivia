@@ -55,7 +55,7 @@ export default function GameOver(props: Props) {
       </div>
       <div className={styles.about}>
       <div>
-        Not in the family? Play{" "}
+        Want less fam? Play{" "}
         <a
           href="https://ozonly.pages.dev"
           target="_blank"
