@@ -53,7 +53,7 @@ export default function GameOver(props: Props) {
           <img src="/images/share.svg" alt="share" className={styles.shareIcon} />
         </Button>
       </div>
-      <div className={styles.about}>
+           <div className={styles.about}>
       <div>
         Want less fam? Play{" "}
         <a
