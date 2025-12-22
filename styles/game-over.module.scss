@@ -1,6 +1,7 @@
 @import "./variables";
 
 .gameOver {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,6 +75,12 @@
     }
   }
 .about {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  z-index: 10;
+  pointer-events: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
