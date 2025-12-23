@@ -37,9 +37,9 @@ export default function GameOver(props: Props) {
    return (
     <animated.div style={animProps} className={styles.gameOver}>
       <div className={styles.topMeta}>
-      <span>Not in the family?</span>{" "}
+      <span>Want less fam?</span>{" "}
       <a
-        href="https://github.com/flicstar/"
+        href="https://ozonly.pages.dev"
         target="_blank"
         rel="noopener noreferrer"
       >
