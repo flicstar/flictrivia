@@ -181,7 +181,7 @@ const type = React.useMemo(() => {
       e.stopPropagation();
     }}
   >
-    Wikipedia
+    More info
   </a>
 )}
             </animated.div>
