@@ -14,7 +14,18 @@
     display: flex;
     justify-content: center;
   }
+.topMeta {
+  align-self: flex-start;
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
 
+  a {
+    color: $text-light;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+}
   .scoreCard {
     display: flex;
     flex-direction: column;
@@ -75,7 +86,6 @@
     }
   }
 .about {
-  position: absolute;
   left: 0;
   right: 0;
   bottom: 10px;

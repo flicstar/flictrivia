@@ -36,6 +36,16 @@ export default function GameOver(props: Props) {
 
    return (
     <animated.div style={animProps} className={styles.gameOver}>
+      <div className={styles.topMeta}>
+      <span>Not in the family?</span>{" "}
+      <a
+        href="https://github.com/flicstar/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Play OzOnly
+      </a>
+    </div>
       <div className={styles.scoresWrapper}>
         <div className={styles.scoreCard}>
           <div className={styles.scoreLabel}>Your score</div>
@@ -54,16 +64,6 @@ export default function GameOver(props: Props) {
         </Button>
       </div>
            <div className={styles.about}>
-      <div>
-        Want less fam? Play{" "}
-        <a
-          href="https://ozonly.pages.dev"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          OzOnly
-        </a>
-      </div>
     </div>
     </animated.div>
   );
